@@ -57,7 +57,7 @@ employee_json = """
     "date_of_birth":"2002-05-11", 
     "salary":50000,
     "department":"IT", 
-    "employee_id":"74t487y39u94uhiu9-8y84u"
+    "employee_id":"74t487y39u94uhiu9-8y84u",
     "elected_benefits":True}
     """
 
