@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, field_validator, ValidationError
+from pydantic import BaseModel, EmailStr, field_validator, ValidationError, Field
 from uuid import uuid4, UUID
 from enum import Enum
 from datetime import date
@@ -19,12 +19,23 @@ class Employee(BaseModel):
     employee_id: UUID = uuid4
     elected_benefits: bool
 
+
+# VALIDATION SECTION ------------------------------------------------------
     @field_validator("salary")
     def validate_account_id(value):
         if value <=0:
             raise ValueError(f"salary must be positive, you returned {value}")
         return value
+    
 
+    @field_validator("date_of_birth")
+    def age_checker(value):
+        today = date.today()
+        entry_age = today.year - value.year
+        if entry_age < 18:
+            raise ValueError(f"you must be at least 18 years, you are {entry_age} years old")
+        return value
+#----------------------------------------------------------------------------
 user = Employee(
     name='Winner',
     email='onubawinner@042gmail.com',
