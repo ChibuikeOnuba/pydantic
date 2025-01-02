@@ -18,13 +18,14 @@ class newEmployee(BaseModel):
     department: Departments
     elected_benefits: bool
 
-new_user = Employee(
-    name="Frames",
-    email="onubawinner042@yahoo.com",
-    date_of_birth=date(2005,5,11),
-    salary=50,
-    department=Departments.SALES,
-    elected_benefits=True
-)
+# validating dictionaries
+new_user = """{
+    "name":"Frames",
+    "email":"onubawinner042@yahoo.com",
+    "date_of_birth":"2002-05-11",
+    "salary":50,
+    "department":"SALES",
+    "elected_benefits":true
+    }"""
 
-print(new_user)
+print(Employee.model_validate_json(new_user))
