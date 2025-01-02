@@ -57,8 +57,13 @@ employee_json = """
     "date_of_birth":"2002-05-11", 
     "salary":50000,
     "department":"IT", 
+<<<<<<< HEAD
     "employee_id":"123e4567-e89b-12d3-a456-426614174000",
     "elected_benefits":true}
+=======
+    "employee_id":"74t487y39u94uhiu9-8y84u"
+    "elected_benefits":True}
+>>>>>>> 91f57d48ba7449d5938722559ae40c12f4cc9444
     """
 
 print(Employee.model_validate_json(employee_json))
