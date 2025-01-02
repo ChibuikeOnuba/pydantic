@@ -53,11 +53,11 @@ print(Employee(**employee_dict))
 
 employee_json = """
     {"name":"Winner", 
-    "email":"onubawinner@042gmail.com",
+    "email":"onubawinner042@gmail.com",
     "date_of_birth":"2002-05-11", 
     "salary":50000,
     "department":"IT", 
-    "employee_id":"74t487y39u94uhiu9-8y84u"
+    "employee_id":"123e4567-e89b-12d3-a456-426614174000",
     "elected_benefits":True}
     """
 
