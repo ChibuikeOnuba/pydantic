@@ -58,7 +58,7 @@ employee_json = """
     "salary":50000,
     "department":"IT", 
     "employee_id":"123e4567-e89b-12d3-a456-426614174000",
-    "elected_benefits":True}
+    "elected_benefits":true}
     """
 
 print(Employee.model_validate_json(employee_json))
