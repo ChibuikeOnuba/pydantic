@@ -16,7 +16,7 @@ class Employee(BaseModel):
     date_of_birth: date
     salary: float
     department: Departments
-    employee_id: int
+    employee_id: UUID = uuid4
     elected_benefits: bool
 
     @field_validator("employee_id")
@@ -25,6 +25,27 @@ class Employee(BaseModel):
             raise ValueError(f"account_id must be positive {value}")
         return value
 
-user = Employee(name='Winner', email='onubawinner@042gmail.com',date_of_birth=date(2002,5,11), salary=50000, department=Departments.IT, elected_benefits=True)
-print(user)
+user = Employee(
+    name='Winner', 
+    email='onubawinner@042gmail.com',
+    date_of_birth=date(2002,5,11), 
+    salary=50000,
+
+    
+    department=Departments.IT, 
+    elected_benefits=True
+    )
+
+# working with dicts
+
+employee_dict = {
+    'name':'Winner', 
+    'email':'onubawinner@042gmail.com',
+    'date_of_birth':'2002-05-011', 
+    'salary':50000,
+    'department':'IT', 
+    'elected_benefits':True
+}
+
+print(Employee.model_validate(employee_dict))
 
